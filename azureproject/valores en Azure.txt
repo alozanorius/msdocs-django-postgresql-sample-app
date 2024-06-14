@@ -1,0 +1,19 @@
+Server name             prueba-msdocs-server
+Engine                  PostgreSQL - Flexible Server
+Compute tier and size   Burstable Standard_B1ms
+Database name           prueba-msdocs-database
+Region                  Brazil South
+Username                roriciehip
+Password                $gfUMwgkeL$IOHp$
+
+Cache (New)
+Cache name              prueba-msdocs-cache
+SKU                     Basic (C0)
+
+
+Networking
+Virtual Network             (New) prueba-msdocs-python-postgres-731Vnet (10.0.0.0/16)
+Inbound subnet              (New) prueba-msdocs-python-postgres-731Subnet (10.0.0.0/24)
+DNS                         Azure Private DNS Zone
+Outbound subnet (Web App)   (New) prueba-msdocs-python-postgres-731AppSubnet (10.0.1.0/24)
+Outbound subnet (Database)  (New) prueba-msdocs-python-postgres-731DbSubnet (10.0.2.0/24)

@@ -1,0 +1,25 @@
+<!-- descargar_confirmacion.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Descarga Lista</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script>
+        function iniciarDescarga() {
+            window.location.href = "{% url 'restaurant_review:descargar_excel' %}";
+            setTimeout(function() {
+                window.location.href = "{% url 'restaurant_review:mirar_directorio' %}";
+            }, 5000);  // Ajusta este tiempo según necesidades
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+    <h1 class="mb-3">Tu archivo está listo</h1>
+    <p class="mb-4">Haz clic en el botón de abajo para descargar tu archivo Excel. Serás redirigido a la página de inicio automáticamente.</p>
+    <button class="btn btn-success" onclick="iniciarDescarga()">Descargar Excel</button>
+    </div>
+</body>
+</html>

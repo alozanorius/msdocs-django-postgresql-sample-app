@@ -41,9 +41,9 @@ This project has a [dev container configuration](.devcontainer/), which makes it
 
 ### Quick deploy
 
-This project is designed to work well with the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview), which makes it easier to develop apps locally, deploy them to Azure, and monitor them. 
+This project is designed to work well with the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview), which makes it easier to develop apps locally, deploy them to Azure, and monitor them.
 
-🎥 Watch a deployment of the code in [this screencast](https://www
+🎥 Watch a deployment of the code in [this screencast](<https://www>
 .youtube.com/watch?v=JDlZ4TgPKYc).
 
 Steps for deployment:

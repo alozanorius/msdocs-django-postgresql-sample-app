@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Archivos PDF</title>
+</head>
+<body>
+    <h2>Seleccionar directorio con archivos PDF para cargar.</h2>
+    <form id="upload-form" action="{% url 'file_handler:mirar_directorio' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" id="file-input" webkitdirectory directory multiple>
+        <ul id="file-list"></ul>
+        <button type="button" id="upload-btn">Cargar archivos</button>
+    </form>
+    <div id="loading-message" style="display:none;">Cargando archivos</div>
+    <script src={% static 'file_handler/formulario_bis.js' %}></script>
+</body>
+</html>
+
