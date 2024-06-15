@@ -29,15 +29,22 @@ def descargar_excel(request):
 def mirar_directorio(request):
     if request.method == 'POST':
         files = request.FILES.getlist('files')
+        max_file_size = 614400  # 600 KB
+        max_valid_files = 25
+        count_valid_pdfs = 0
         lista_valores = []
         for file in files:
-            print(file)
-            print("\n\n")
-            try:
-                valores = utils.extraccion_total(file)
-                lista_valores.append(valores)
-            except:
-                print(f"Incompatibilidad de archivo: {file}")
+            if file.name.lower().endswith('.pdf'):
+                if file.size <= max_file_size:
+                    if count_valid_pdfs < max_valid_files:
+                        count_valid_pdfs += 1
+                        print(file)
+                        print("\n\n")
+                        try:
+                            valores = utils.extraccion_total(file)
+                            lista_valores.append(valores)
+                        except:
+                            print(f"Incompatibilidad de archivo: {file}")
         response_stream = utils.crear_excel_xls_con_archivo(lista_valores, "salida_django_xls")
         base64_encoded = base64.b64encode(response_stream.getvalue()).decode('utf-8')
         request.session['excel_data'] = base64_encoded
